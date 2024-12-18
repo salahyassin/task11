@@ -42,29 +42,12 @@ function checkInputs(){
         incorrectParaSignup.innerHTML='In Valid Pass ( at least 8 char)'
         incorrectParaSignup.classList.replace('d-none','d-block') 
 
-    }else if(alreadyExist()){
-        incorrectParaSignup.innerHTML='User Already Exist'
-        incorrectParaSignup.classList.replace('d-none','d-block') 
-
-    }
-    else{
+     }else{
         incorrectParaSignup.classList.replace('d-block','d-none') 
         return true
     }
 }
-function alreadyExist(){
-    var usersExist = JSON.parse(localStorage.getItem('allUsers'))
-    for(let i=0 ;i<usersExist.length;i++){
-        if(signupEmail.value==usersExist[i].userEmail){
-            
-            return true
-        }else{
-            return false
-            
-            
-        }
-    }
-}
+
 function checkEmailValidation(){
     if(!isValidEmail(signupEmail.value)){
         return true
