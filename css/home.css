@@ -1,0 +1,13 @@
+body {
+    font-family: "Titillium Web", sans-serif;
+
+    background-color: #24353f;
+    height: 100vh;
+    
+}
+.ml-auto {
+    margin-left: auto !important;
+}
+.group{
+    box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+}
