@@ -31,6 +31,7 @@ function addUser(){
     
 }
 function checkInputs(){
+    const isUserExist = users.some(user => user.userEmail === signupEmail.value);
     if(signupEmail.value==""||signupPass.value==""){
         incorrectParaSignup.classList.replace('d-none','d-block') 
     }else if(checkEmailValidation()){
@@ -42,7 +43,12 @@ function checkInputs(){
         incorrectParaSignup.innerHTML='In Valid Pass ( at least 8 char)'
         incorrectParaSignup.classList.replace('d-none','d-block') 
 
-     }else{
+    }else if(isUserExist){
+        incorrectParaSignup.classList.replace('d-none', 'd-block');
+        incorrectParaSignup.innerHTML = 'User already exists';
+        return false;
+    }
+    else{
         incorrectParaSignup.classList.replace('d-block','d-none') 
         return true
     }
